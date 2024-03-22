@@ -1,0 +1,26 @@
+/* app.component.css */
+
+.layout-container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.layout-sidebar {
+    flex: 0 0 20%; /* Establece el ancho de la barra lateral como el 20% del contenedor principal */
+    background-color: #f0f0f0; /* Color de fondo de la barra lateral */
+    padding: 20px;
+}
+
+.layout-content {
+    flex: 1; /* El contenido principal toma todo el espacio restante */
+    padding: 20px;
+}
+/* En tu archivo CSS */
+.rounded-sidebar {
+    border-radius: 10px; /* Ajusta el valor según tus preferencias */
+  }
+  .layout-sidebar {
+    background-color: #f4f4f4;
+}
+  

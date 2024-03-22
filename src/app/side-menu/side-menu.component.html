@@ -1,0 +1,32 @@
+<div class="side-menu" style="border-radius: 10px;">
+    <ul class="p-menu p-menu-list p-menu-root">
+        <li class="p-menuitem">
+            <a routerLink="/" routerLinkActive="active">
+                <i class="pi pi-home"></i>
+                <span class="menu-text">Inicio</span>
+            </a>
+        </li>
+        <li class="p-menuitem">
+            <a>
+                <i class="pi pi-globe"></i>
+                <span class="menu-text">Hacking Web</span>
+            </a>
+            <ul class="p-submenu hacking-web-submenu">
+                <li class="p-menuitem">
+                    <a routerLink="/sql-injection" routerLinkActive="active">
+                        <i class="pi pi-database"></i>
+                        <span class="menu-text">SQL Injection</span>
+                    </a>
+                </li>
+                <!-- Agrega más opciones de hacking web según sea necesario -->
+                <li class="p-menuitem">
+                    <a routerLink="/xss" routerLinkActive="active">
+                        <i class="pi pi-ban"></i>
+                        <span class="menu-text">XSS</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <!-- Agrega más elementos de menú según sea necesario -->
+    </ul>
+</div>
