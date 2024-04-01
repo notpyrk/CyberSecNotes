@@ -4,6 +4,8 @@ import { SqlInjectionPageComponent } from './sql-injection-page/sql-injection-pa
 import { HomeComponent } from './home/home.component';
 import { OfflinePasswordAttackComponent } from './offline-password-attack/offline-password-attack.component';
 import { OnlinePasswordAttackComponent } from './online-password-attack/online-password-attack.component';
+import { PasswordAttackMenuComponent } from './password-attack-menu/password-attack-menu.component';
+import { HackingWebMenuComponent } from './hacking-web-menu/hacking-web-menu.component';
 import { XssComponent } from './xss/xss.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirección a /home
@@ -12,6 +14,8 @@ const routes: Routes = [
   { path: 'xss', component: XssComponent },
   { path: 'onlinePasswordAttack', component: OnlinePasswordAttackComponent },
   { path: 'offlinePasswordAttack', component: OfflinePasswordAttackComponent },
+  { path: 'passwordAttack', component: PasswordAttackMenuComponent },
+  { path: 'hackingWeb', component: HackingWebMenuComponent },
   // Otras rutas
 ];
 

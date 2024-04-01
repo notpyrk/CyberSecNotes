@@ -1,53 +1,17 @@
-<div class="side-menu" style="border-radius: 10px;">
-    <ul class="p-menu p-menu-list p-menu-root">
-        <li class="p-menuitem">
-            <a routerLink="/" routerLinkActive="active" >
-                <i class="pi pi-home"></i>
-                <span class="menu-text">Inicio</span>
-            </a>
-        </li>
-        <li class="p-menuitem">
-            <a>
-                <i class="pi pi-globe"></i>
-                <span class="menu-text">Hacking Web</span>
-            </a>
-            <ul class="p-submenu hacking-web-submenu">
-                <li class="p-menuitem">
-                    <a routerLink="/sql-injection" routerLinkActive="active">
-                        <i class="pi pi-database" style="color: grey;"></i>
-                        <span class="menu-text">SQL Injection</span>
-                    </a>
-                </li>
-                <!-- Agrega más opciones de hacking web según sea necesario -->
-                <li class="p-menuitem">
-                    <a routerLink="/xss" routerLinkActive="active">
-                        <i class="pi pi-ban"></i>
-                        <span class="menu-text">XSS</span>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <!-- Agrega más elementos de menú según sea necesario -->
-        <li class="p-menuitem">
-            <a>
-                <i class="pi pi-shield"></i>
-                <span class="menu-text">Ataques a contraseñas</span>
-            </a>
-            <ul class="p-submenu hacking-web-submenu">
-                <li class="p-menuitem">
-                    <a routerLink="/onlinePasswordAttack" routerLinkActive="active">
-                        <i class="pi pi-user" style="color: green;"></i>
-                        <span class="menu-text">Online</span>
-                    </a>
-                </li>
-                <!-- Agrega más opciones de hacking web según sea necesario -->
-                <li class="p-menuitem">
-                    <a routerLink="/offlinePasswordAttack" routerLinkActive="active">
-                        <i class="pi pi-times" style="color: red;"></i>
-                        <span class="menu-text">Offline</span>
-                    </a>
-                </li>
-            </ul>
-        </li>
-    </ul>
+
+<br>
+<div class="grid p-fluid">
+    <div class="col-12">
+        <div class="card card-w-title">
+            <p-menubar [model]="tieredItems" styleClass="custom-menu">
+                <ng-template pTemplate="end">
+                    <span class="p-input-icon-right">
+                        <input type="text" pInputText placeholder="Search">
+                        <i class="pi pi-search"></i>
+                    </span>
+                </ng-template>
+            </p-menubar>
+        </div>
+    </div>
 </div>
+

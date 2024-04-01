@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 @Component({
-  selector: 'app-offline-password-attack',
+  selector: 'app-hacking-web-menu',
   standalone: true,
   imports: [],
-  templateUrl: './offline-password-attack.component.html',
-  styleUrl: './offline-password-attack.component.css'
+  templateUrl: './hacking-web-menu.component.html',
+  styleUrl: './hacking-web-menu.component.css'
 })
-export class OfflinePasswordAttackComponent {
+export class HackingWebMenuComponent {
   pageTitle: string = '';
 
   constructor(private titleService: Title) { }
 
   ngOnInit(): void {
-    this.pageTitle = 'Ataques a contraseñas offline';
+    this.pageTitle = 'Hacking Web';
     this.titleService.setTitle(this.pageTitle);
   }
 }
