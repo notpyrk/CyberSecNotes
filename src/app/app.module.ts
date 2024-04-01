@@ -14,13 +14,22 @@ import { DialogModule } from 'primeng/dialog';
 import { CardModule } from 'primeng/card';
 import { PanelModule } from 'primeng/panel';
 import { OnlinePasswordAttackComponent } from './online-password-attack/online-password-attack.component';
+import { OfflinePasswordAttackComponent } from './offline-password-attack/offline-password-attack.component';
+import { XssComponent } from './xss/xss.component';
+import { SqlInjectionPageComponent } from './sql-injection-page/sql-injection-page.component';
+import { ButtonModule } from 'primeng/button';
+import Prism from 'prismjs';
 @NgModule({
   declarations: [
     AppComponent,
     SideMenuComponent,
-    OnlinePasswordAttackComponent
+    OnlinePasswordAttackComponent,
+    OfflinePasswordAttackComponent,
+    XssComponent,
+    SqlInjectionPageComponent
   ],
   imports: [
+    ButtonModule,
     CardModule,
     PanelModule,
     DialogModule,

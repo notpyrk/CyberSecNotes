@@ -1,25 +1,27 @@
-<h1 class="page-title">{{ pageTitle }}</h1>
-
-<div class="textarea-container">
-  <textarea id="codigo" readonly>
-    asdasd
-
-    asd
-    asd
-    as
-    d
-
-
-    asd
-    asd
-    as
-    d
-
-
-    asd
-    asd
-    asd
-    asd
-  </textarea>
-</div>
-<button (click)="copyToClipboard()" class="copy-button">Copiar</button>
+<p-header>
+  <h1>Cross Site Scripting</h1>
+</p-header>
+<p-panel [style]="panelStyle">
+  <ng-template pTemplate="header">
+    <div class="header-container">
+      <span>{{ panelXSSHeader }}</span>
+    </div>
+  </ng-template>
+</p-panel>
+<br>
+<hr>
+<br>
+<p-panel header=" Reflected XSS">
+  Content goes here
+  <br>
+  <br>
+  <p-panel [style]="panelStyle">
+    <ng-template pTemplate="header">
+      <div class="header-container">
+        <span>{{ panelHeader }}</span>
+        <button pButton type="button" icon="pi pi-copy" (click)="copyContent()" class="copy-button"></button>
+      </div>
+    </ng-template>
+    <pre class="code-container"><code class="language-javascript">{{ codeContent }}</code></pre>
+  </p-panel>
+</p-panel>

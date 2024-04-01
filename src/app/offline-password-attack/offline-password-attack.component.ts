@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-offline-password-attack',
-  standalone: true,
-  imports: [],
   templateUrl: './offline-password-attack.component.html',
   styleUrl: './offline-password-attack.component.css'
 })

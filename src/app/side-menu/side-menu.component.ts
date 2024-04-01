@@ -28,6 +28,12 @@ export class SideMenuComponent {
   ngOnInit() {
 
     this.tieredItems = [
+          {
+            label: 'Home',
+            icon: 'pi pi-home',
+            routerLink: '/home',
+            
+        },
         {
             label: 'Hacking Web',
             icon: 'pi pi-globe',
@@ -40,7 +46,7 @@ export class SideMenuComponent {
                 },
                 {
                   label: 'XSS',
-                  icon: 'pi pi-ban',
+                  icon: 'pi pi-code',
                   routerLink:'/xss'
               }
             ]
