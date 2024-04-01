@@ -62,6 +62,64 @@
 .side-menu .p-menuitem {
     margin-left: 0;
 }
-ul.p-menu.p-menu-list.p-menu-root {
-    margin-left: -30%;
+
+.side-menu {
+    background-color: #f4f4f4;
+    width: auto;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif; /* Cambia el tipo de letra */
+}
+
+.side-menu .p-menuitem {
+    margin-bottom: 10px;
+    margin-left: 0; /* Reducir el margen izquierdo */
+}
+
+.side-menu .p-menuitem a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+}
+
+.side-menu .p-menuitem a:hover {
+    background-color: #e0e0e0;
+    border-radius: 10px; /* Ajusta el valor según tus preferencias */
+}
+
+.side-menu .p-menuitem .pi {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.side-menu .menu-text {
+    margin-left: 5px;
+}
+
+.side-menu .p-menu-list {
+    list-style-type: none; /* Elimina la lista predeterminada de puntos */
+}
+
+.side-menu .hacking-web-submenu {
+    display: block; /* Muestra el submenu permanentemente */
+}
+
+.side-menu .p-submenu {
+    list-style-type: none; /* Elimina la lista predeterminada de puntos */
+}
+
+.side-menu .p-menuitem a:hover {
+    background-color: #e0e0e0;
+    border-radius: 10px; /* Ajusta el valor según tus preferencias */
+}
+
+/* Elimina el margen izquierdo del menú */
+.side-menu {
+    margin-left: 0;
+}
+
+/* Elimina el margen izquierdo de los elementos del menú */
+.side-menu .p-menuitem {
+    margin-left: 0;
 }

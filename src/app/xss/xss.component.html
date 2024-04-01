@@ -1,1 +1,25 @@
-<p>xss works!</p>
+<h1 class="page-title">{{ pageTitle }}</h1>
+
+<div class="textarea-container">
+  <textarea id="codigo" readonly>
+    asdasd
+
+    asd
+    asd
+    as
+    d
+
+
+    asd
+    asd
+    as
+    d
+
+
+    asd
+    asd
+    asd
+    asd
+  </textarea>
+</div>
+<button (click)="copyToClipboard()" class="copy-button">Copiar</button>

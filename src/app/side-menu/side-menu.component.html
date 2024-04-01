@@ -1,7 +1,7 @@
 <div class="side-menu" style="border-radius: 10px;">
     <ul class="p-menu p-menu-list p-menu-root">
         <li class="p-menuitem">
-            <a routerLink="/" routerLinkActive="active">
+            <a routerLink="/" routerLinkActive="active" >
                 <i class="pi pi-home"></i>
                 <span class="menu-text">Inicio</span>
             </a>
@@ -14,7 +14,7 @@
             <ul class="p-submenu hacking-web-submenu">
                 <li class="p-menuitem">
                     <a routerLink="/sql-injection" routerLinkActive="active">
-                        <i class="pi pi-database"></i>
+                        <i class="pi pi-database" style="color: grey;"></i>
                         <span class="menu-text">SQL Injection</span>
                     </a>
                 </li>
@@ -28,5 +28,26 @@
             </ul>
         </li>
         <!-- Agrega más elementos de menú según sea necesario -->
+        <li class="p-menuitem">
+            <a>
+                <i class="pi pi-shield"></i>
+                <span class="menu-text">Ataques a contraseñas</span>
+            </a>
+            <ul class="p-submenu hacking-web-submenu">
+                <li class="p-menuitem">
+                    <a routerLink="/onlinePasswordAttack" routerLinkActive="active">
+                        <i class="pi pi-user" style="color: green;"></i>
+                        <span class="menu-text">Online</span>
+                    </a>
+                </li>
+                <!-- Agrega más opciones de hacking web según sea necesario -->
+                <li class="p-menuitem">
+                    <a routerLink="/offlinePasswordAttack" routerLinkActive="active">
+                        <i class="pi pi-times" style="color: red;"></i>
+                        <span class="menu-text">Offline</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
     </ul>
 </div>
