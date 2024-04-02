@@ -1,27 +1,139 @@
 <p-header>
   <h1>Cross Site Scripting</h1>
 </p-header>
-<p-panel [style]="panelStyle">
-  <ng-template pTemplate="header">
-    <div class="header-container">
-      <span>{{ panelXSSHeader }}</span>
-    </div>
-  </ng-template>
-</p-panel>
-<br>
-<hr>
-<br>
-<p-panel header=" Reflected XSS">
-  Content goes here
-  <br>
-  <br>
-  <p-panel [style]="panelStyle">
+
+<div class="panel-wrapper">
+  <p-panel>
     <ng-template pTemplate="header">
       <div class="header-container">
-        <span>{{ panelHeader }}</span>
-        <button pButton type="button" icon="pi pi-copy" (click)="copyContent()" class="copy-button"></button>
+        <span>{{ panelXSSHeader }}</span>
       </div>
     </ng-template>
-    <pre class="code-container"><code class="language-javascript">{{ codeContent }}</code></pre>
+    <p>
+      Cross-Site Scripting, abreviado como XSS, es una vulnerabilidad de seguridad que afecta a las aplicaciones web. 
+    </p>  
+    <p>
+      Permite a los atacantes inyectar scripts maliciosos, generalmente en forma de código JavaScript, en páginas web vistas por otros usuarios. 
+    </p>  
+    <p>
+      Estos scripts pueden robar información confidencial, como por ejemplo, la cookie de sesions, 
+      permitiendo al atacante hacer login a la pagina web sin necesidad de utilizar credenciales y saltandose la 2fa
+    </p>  
+    <p>
+      Existen varios tipos de XSS, pero nosotros nos vamos a centrar en <strong>Reflected</strong> y <strong>Stored</strong>
+    </p>  
   </p-panel>
-</p-panel>
+</div>
+
+<br>
+<hr>
+
+<br>
+<div class="panel-wrapper">
+  <p-panel [toggleable]="true">
+    <ng-template pTemplate="header">
+      <div class="header-container">
+        <h3>{{ panelHeaderReflected }}</h3>
+        
+      </div>
+    </ng-template>
+    
+    <pre class="code-container"><button pButton type="button" icon="pi pi-copy" (click)="copyContent('.code-container')" class="copy-button"></button><br><hr><code class="language-javascript">{{ codeContent }}</code></pre>
+  </p-panel>
+</div>
+
+<br>
+<hr>
+
+<br>
+<div class="panel-wrapper">
+  <p-panel [toggleable]="true">
+    <ng-template pTemplate="header">
+      <div class="header-container">
+        <h3>{{ panelHeaderStored }}</h3>
+        
+      </div>
+    </ng-template>
+    
+    <p>
+      XSS (Cross-Site Scripting) Stored es una forma de ataque de seguridad en aplicaciones web donde un atacante puede inyectar scripts maliciosos en una página web o una aplicación web que luego se almacena y se muestra a otros usuarios que visitan esa página.
+    </p>
+    <p>
+      Este ataque sirve para poder conseguir informacion del usuario que visita la pagina, como por ejemplo la cookie de sesion
+    </p>
+    <h3>Como funciona?</h3>
+    <p>
+      La idea es encontrar algun input de la pagina que alamcene la informacion en BBDD (por ejemplo un Foro) y nos permita ejecutar etiquetas HTML. En caso de que así sea,
+      tendriamos que crear un registro insertando este codigo malicioso.
+    </p>
+    <p>
+      Lo que conseguimos con esto es que cada vez que alguien entre en nuestro post creado en el Foro, se ejecute el script, ya que se intepreta cada vez que alguien entre al estar en BBDD
+    </p>
+    <hr>
+    <p-panel [toggleable]="true">
+      <ng-template pTemplate="header">
+        <div class="header-container">
+          <h3>{{ ejemplo1 }}</h3>
+          
+        </div>
+      </ng-template>
+      <div style="background-color: #dacfcf;padding: 10px;">
+        <p>
+          Nos encontramos con esta pagina web
+        </p>
+        <img src="assets/XSS/XSSform.PNG">
+        <p>
+          Cramos un nuevo registro, insertando una etiqueta HTML
+        </p>
+        <img src="assets/XSS/XSSinput.PNG">
+        <p>
+          Al guardar el registro, observamos como la pagina ha interpretado correctamente la etiqueta HTML
+        </p>
+        <img src="assets/XSS/XSStest.PNG">
+        <p>
+          Llegados a este punto, podemos probar a insterar una etqiueta script.
+        </p>
+        <p>
+          Al ser un registro que se esta almacenando en base de datos, cada vez que alguien entre a nuestro post, se ejecutara el script
+        </p>
+        <p>
+          Para ello, creamos un registro con la etiqueta
+        </p>
+        <img src="assets/XSS/XSStag.PNG">
+        <p>
+          Cuando alguien acceda a nuestro post, vemos como se ejecuta
+        </p>
+        <img src="assets/XSS/XSSpost.PNG"><br><br>
+        <img src="assets/XSS/XSSalert.PNG">
+        <pre class="alertTest"><strong>{{codigoXSSalert}}</strong><button pButton type="button" icon="pi pi-copy" (click)="copyContent('.alertTest')" class="copy-button"></button><br><hr><code class="language-javascript">{{ codeContentAlert }}</code></pre>
+      </div>
+      
+    </p-panel>
+    <br>
+    <p-panel [toggleable]="true">
+      <ng-template pTemplate="header">
+        <div class="header-container">
+          <h3>{{ ejemplo2 }}</h3>
+          
+        </div>
+      </ng-template>
+      <div style="background-color: #dacfcf;padding: 10px;">
+        <p>
+          Para este ejemplo, vamos a crear un script que nos de la informacion de la cookie de sesion del usuario que entre a visitar nuestro post
+        </p>
+        <p>
+          Esta vulnerabilidad ya es muy grave 
+        </p>
+        <p>
+          Para empezar, vamos a ver si conseguimos sacar en un alert la coockie de sesion
+        </p>
+        <pre class="alertCookie"><strong>{{codigoXSSalert}}</strong><button pButton type="button" icon="pi pi-copy" (click)="copyContent('.alertCookie')" class="copy-button"></button><br><hr><code class="language-javascript">{{ codeContentAlertCookie }}</code></pre>
+        
+        <pre class="alertCookie"><strong>{{codigoXSScookie}}</strong><button pButton type="button" icon="pi pi-copy" (click)="copyContent('.alertCookie')" class="copy-button"></button><br><hr><code class="language-javascript">{{ codeContentAlertCookie }}</code></pre>
+      </div>
+      
+    </p-panel>
+    <br>
+  </p-panel>
+</div>
+

@@ -18,7 +18,7 @@ import { OfflinePasswordAttackComponent } from './offline-password-attack/offlin
 import { XssComponent } from './xss/xss.component';
 import { SqlInjectionPageComponent } from './sql-injection-page/sql-injection-page.component';
 import { ButtonModule } from 'primeng/button';
-import Prism from 'prismjs';
+
 @NgModule({
   declarations: [
     AppComponent,

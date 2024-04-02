@@ -1,11 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 .page-title {
-    font-size: 28px; /* Tamaño grande de fuente */
-    font-weight: bold; /* Texto en negrita */
-    color: #fff; /* Color de texto blanco */
-    background-color: #007bff; /* Color de fondo azul */
-    padding: 10px 20px; /* Espaciado interno */
-    border-radius: 5px; /* Bordes redondeados */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    font-size: 28px;
+    font-weight: bold; 
+    color: #fff; 
+    background-color: #007bff; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-  
+
+.p-menubar {
+    border: 1px solid green;
+    border-radius: 20px;
+    background: #d4c1c1;
+    
+}
+.panel-wrapper {
+  border-radius: 20px;
+  border: 1px solid green;
+  overflow: hidden; 
+}

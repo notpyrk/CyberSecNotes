@@ -31,8 +31,7 @@ export class SideMenuComponent {
           {
             label: 'Home',
             icon: 'pi pi-home',
-            routerLink: '/home',
-            
+            routerLink: '/home'
         },
         {
             label: 'Hacking Web',

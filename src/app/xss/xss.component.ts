@@ -10,9 +10,15 @@ import Prism from 'prismjs';
 export class XssComponent implements AfterViewInit, OnInit  {
   pageTitle: string = '';
   panelHeader: string = 'Codigo XSS';
-  panelXSSHeader: string = 'Que es XSSaa';
-  
-  panelStyle: any = {'background-color': '#f4f4f4', 'border': '1px solid #ccc'};
+  codigoXSScookie: string = 'script para obtener la cookie';
+  codigoXSSalert: string = 'script alert';
+  panelHeaderReflected: string = 'Reflected XSS';
+  panelHeaderStored: string = 'Stored XSS';
+  ejemplo1: string = 'Ejemplo 1: Alert cada vez que se entra a  un post';
+  ejemplo2: string = 'Ejemplo 2: Robar cookie de sesion';
+  panelXSSHeader: string = 'Que es XSS';
+  codeContentAlert:  string = `Test XSS <script>alert("PruebaXSS");</script>`;
+  codeContentAlertCookie:  string = `<script>alert(document.cookie);</script>`;
   codeContent: string = `if(test){
     // código
   } else {
@@ -66,8 +72,9 @@ export class XssComponent implements AfterViewInit, OnInit  {
     Prism.highlightAll(); // Resalta la sintaxis del código
   }
 
-  copyContent() {
-    const codeContainer = document.querySelector('.code-container') as HTMLElement;
+  copyContent(param: any) {
+    const codeContainer = document.querySelector(param) as HTMLElement;
+    console.log(codeContainer);
     if (codeContainer) {
       const range = document.createRange();
       range.selectNode(codeContainer);
