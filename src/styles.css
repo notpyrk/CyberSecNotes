@@ -10,10 +10,9 @@
   }
 
 .p-menubar {
-    border: 1px solid green;
-    border-radius: 20px;
-    background: #d4c1c1;
-    
+    border: 1px solid green !important;
+    border-radius: 20px !important;
+    background: #d4c1c1 !important;
 }
 .panel-wrapper {
   border-radius: 20px;
