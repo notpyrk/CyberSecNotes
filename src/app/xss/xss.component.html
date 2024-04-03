@@ -1,3 +1,8 @@
+<style>
+  p {
+      font-size: 18px;
+  }
+</style>
 <p-header>
   <h1>Cross Site Scripting</h1>
 </p-header>
@@ -81,15 +86,15 @@
         <p>
           Nos encontramos con esta pagina web
         </p>
-        <img src="assets/XSS/XSSform.PNG">
+        <img src="assets/XSS/XSSform.PNG"><br><br>
         <p>
           Cramos un nuevo registro, insertando una etiqueta HTML
         </p>
-        <img src="assets/XSS/XSSinput.PNG">
+        <img src="assets/XSS/XSSinput.PNG"><br><br>
         <p>
           Al guardar el registro, observamos como la pagina ha interpretado correctamente la etiqueta HTML
         </p>
-        <img src="assets/XSS/XSStest.PNG">
+        <img src="assets/XSS/XSStest.PNG"><br><br>
         <p>
           Llegados a este punto, podemos probar a insterar una etqiueta script.
         </p>
@@ -125,13 +130,50 @@
           Esta vulnerabilidad ya es muy grave 
         </p>
         <p>
-          Para empezar, vamos a ver si conseguimos sacar en un alert la coockie de sesion
+          Vamos a trabajar sobre este formulario.
+        </p>
+        <img src="assets/XSS/XSSstoredForm.PNG"><br><br>
+        <p>
+          Primero, vamos a insetar un registro en el blog con una etiqueta html
+        </p>
+        <img src="assets/XSS/XSSstoredHTML.PNG"><br><br>
+        <img src="assets/XSS/XSSstoredH1.PNG"><br><br>
+        <p>
+          Como podemos ver, se ha almacenado el contenido en la BBDD y se interpreta correctamente
+        </p>
+        <p>
+          Ahora, vamos a ver si conseguimos sacar en un alert la coockie de sesion
         </p>
         <pre class="alertCookie"><strong>{{codigoXSSalert}}</strong><button pButton type="button" icon="pi pi-copy" (click)="copyContent('.alertCookie')" class="copy-button"></button><br><hr><code class="language-javascript">{{ codeContentAlertCookie }}</code></pre>
-        
-        <pre class="alertCookieScript"><strong>{{codigoXSScookie}}</strong><button pButton type="button" icon="pi pi-copy" (click)="copyContent('.alertCookieScript')" class="copy-button"></button><br><hr><code class="language-javascript">{{ codeContentAlertCookie }}</code></pre>
+        <img src="assets/XSS/XSSstoredAlertCookie.PNG"><br><br>
+        <p>
+          Como vemos a continuacion, en el momento en el que cualquier usuario acceda al blog, le aparecera un pop up mostrandole su cookie de sesion
+        </p>
+
+        <img src="assets/XSS/XSSstoredCookie.PNG"><br><br>
+        <p>
+          Como ataque, esto no nos sirve de mucho, porque esto es un pop up que le va a saltar al cliente. La idea ahora es que este contenido nos llegue a nosotros de alguna forma
+        </p>
+        <p>
+          Para ello, vamos a generar un payload en JavaScript que nos haga una peticion por http a un servidor que vamos a tener que estar ejecutando en nuestro equipo mediante python
+        </p>
+        <pre class="alertCookieScript"><strong>{{codigoXSScookie}}</strong><button pButton type="button" icon="pi pi-copy" (click)="copyContent('.alertCookieScript')" class="copy-button"></button><br><hr><code class="language-javascript">{{ codesendCookie }}</code></pre>
+        <p>
+          Al crear un post en el blog con este contgenido, cada vez que alguien acceda a nuestro post, se va a hacer una llamada a nuestro servidor donde nos llegaran las cookies de los usuarios que estan accediendo
+        </p>
+        <img src="assets/XSS/XSSstoredcookieForm.PNG"><br><br>
+        <p>
+          Despues de enviar el payload, vemos como se crea el post diciendo que es un blog muy bonito, pero por debajo, nos esta llegando la informacion de la cookie del usuario a nuestro servidor
+        </p>
+        <img src="assets/XSS/XSSstoredCookieSent.PNG"><br><br>
+        <p>
+          Ahora, vamos a entrar a este post con otro usuario, en este caso con el usuario test
+        </p>
+        <img src="assets/XSS/XSSstoredTest.PNG"><br><br>
+        <p>
+          como vemos, nos ha llegado la cookie de sesion del usuario test, ahora podriamos hacer cookie hijacking para hacer login con ese usuario indicando solo la cookie sin necesidad de ingresar credenciales
+        </p>
       </div>
-      
     </p-panel>
     <br>
   </p-panel>
