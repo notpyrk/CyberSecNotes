@@ -9,7 +9,9 @@ export class OfflinePasswordAttackComponent {
   pageTitle: string = '';
   john:  string = `john --format=<format> --wordlist=<wordlist> <file>`;
   unshadow:  string = `unshadow ficheroPasswd ficheroShadow > ficheroGenerado`;
-  decrypt:  string = `john --format=md5crypt-long --wordlist=/usr/share/wordlists/rockyou.txt ficheroGenerado`;
+  decrypt:  string = `john --format=crypt --wordlist=/usr/share/wordlists/rockyou.txt ficheroGenerado`;
+  zip2john:  string = `zip2john [archivo ZIP] > [Fichero hashes]`;
+  johnZip:  string = `john --format=PKZIP --wordlist=/usr/share/wordlists/rockyou.txt [Fichero hashes]`;
   comando:  string = 'comando';
   constructor(private titleService: Title) { }
 

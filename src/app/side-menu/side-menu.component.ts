@@ -34,6 +34,23 @@ export class SideMenuComponent {
             routerLink: '/home'
         },
         {
+          label: 'Conceptos',
+          icon: 'pi pi-book',
+          //routerLink: '/hackingWeb',
+          items: [
+              {
+                  label: 'SQL Injection',
+                  icon: 'pi pi-database',
+                  routerLink: '/sql-injection'
+              },
+              {
+                label: 'XSS',
+                icon: 'pi pi-code',
+                routerLink:'/xss'
+            }
+          ]
+      },
+        {
             label: 'Hacking Web',
             icon: 'pi pi-globe',
             //routerLink: '/hackingWeb',
