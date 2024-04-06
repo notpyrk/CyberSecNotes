@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { Router, NavigationEnd } from '@angular/router';
 @Component({
   selector: 'app-offline-password-attack',
   templateUrl: './offline-password-attack.component.html',
@@ -13,7 +14,13 @@ export class OfflinePasswordAttackComponent {
   zip2john:  string = `zip2john [archivo ZIP] > [Fichero hashes]`;
   johnZip:  string = `john --format=PKZIP --wordlist=/usr/share/wordlists/rockyou.txt [Fichero hashes]`;
   comando:  string = 'comando';
-  constructor(private titleService: Title) { }
+  constructor(private titleService: Title, private router: Router) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        window.scrollTo(0, 0); // Scrolls to the top of the page
+      }
+    });
+  }
 
   ngOnInit(): void {
     this.pageTitle = 'Ataques a contraseñas offline';

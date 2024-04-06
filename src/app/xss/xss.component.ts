@@ -1,7 +1,7 @@
 import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import Prism from 'prismjs';
-
+import { Router, NavigationEnd } from '@angular/router';
 @Component({
   selector: 'app-xss',
   templateUrl: './xss.component.html',
@@ -68,7 +68,13 @@ export class XssComponent implements AfterViewInit, OnInit  {
   }`;
   
   
-  constructor(private titleService: Title) { }
+  constructor(private titleService: Title, private router: Router) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        window.scrollTo(0, 0); // Scrolls to the top of the page
+      }
+    });
+  }
 
   ngOnInit(): void {
     this.pageTitle = 'Cross-Site Scripting (XSS)';

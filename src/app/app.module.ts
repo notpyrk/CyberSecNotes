@@ -18,6 +18,9 @@ import { OfflinePasswordAttackComponent } from './offline-password-attack/offlin
 import { XssComponent } from './xss/xss.component';
 import { SqlInjectionPageComponent } from './sql-injection-page/sql-injection-page.component';
 import { ButtonModule } from 'primeng/button';
+import { LfiComponent } from './lfi/lfi.component';
+import { NmapComponent } from './nmap/nmap.component';
+import { TableModule  } from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { ButtonModule } from 'primeng/button';
     OnlinePasswordAttackComponent,
     OfflinePasswordAttackComponent,
     XssComponent,
-    SqlInjectionPageComponent
+    SqlInjectionPageComponent,
+    LfiComponent,
+    NmapComponent
   ],
   imports: [
     ButtonModule,
@@ -40,7 +45,8 @@ import { ButtonModule } from 'primeng/button';
     AppRoutingModule, // Importa y agrega tu AppRoutingModule aquí
     SidebarModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    TableModule 
   ],
   providers: [PrimeIcons ],
   bootstrap: [AppComponent]

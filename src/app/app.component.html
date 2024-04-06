@@ -5,11 +5,29 @@
 <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
-<body style="background-color: #b9b2b2;">
+<style>
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #969090;
+    padding-bottom: 1%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+</style>
+
+<header>
   <app-side-menu></app-side-menu>
+</header>
+<body style="background-color: #b9b2b2;">
+  
+  
   <div class="layout-container">
     <!-- Contenido principal -->
-    <div class="layout-content">
+    <div class="layout-content" style="margin-top: 5%;">
         <router-outlet></router-outlet>
     </div>
   </div>

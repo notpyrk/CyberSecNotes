@@ -7,6 +7,9 @@ import { OnlinePasswordAttackComponent } from './online-password-attack/online-p
 import { PasswordAttackMenuComponent } from './password-attack-menu/password-attack-menu.component';
 import { HackingWebMenuComponent } from './hacking-web-menu/hacking-web-menu.component';
 import { XssComponent } from './xss/xss.component';
+import { LfiComponent } from './lfi/lfi.component';
+import { NmapComponent } from './nmap/nmap.component';
+
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirección a /home
   { path: 'home', component: HomeComponent }, // Ruta para la página de inicio
@@ -16,6 +19,8 @@ const routes: Routes = [
   { path: 'offlinePasswordAttack', component: OfflinePasswordAttackComponent },
   { path: 'passwordAttack', component: PasswordAttackMenuComponent },
   { path: 'hackingWeb', component: HackingWebMenuComponent },
+  { path: 'lfi', component: LfiComponent },
+  { path: 'nmap', component: NmapComponent },
   // Otras rutas
 ];
 
