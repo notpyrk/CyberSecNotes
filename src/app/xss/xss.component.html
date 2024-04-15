@@ -2,25 +2,37 @@
   p {
       font-size: 18px;
   }
+  a {
+    font-size: 18px;
+    color: #333333 !important;
+  }
+  a:hover {
+    text-decoration: underline !important;
+  }
+  :host ::ng-deep .listbox1 { 
+    width: 300px; 
+    background-color: #8AB4F9;
+    border: none;
+    margin: 0 auto;
+  }  
 </style>
-<p-header>
-  <h1>Cross Site Scripting</h1>
-</p-header>
 
-<p-listbox [options]="sections" [style]="{'width':'300px'}" [optionLabel]="'label'">
+<h1 style=" text-align: center;">Cross Site Scripting</h1>
+
+<p-listbox [options]="sections" [optionLabel]="'label'" styleClass="listbox1">
   <ng-template let-section pTemplate="item">
     <div>
-      <a [href]="'/xss/#' + section.label">
+      <a (click)="scrollToSection(section.label)">
         <span>{{section.label}}</span>
       </a>
       <ul *ngIf="section.subSections">
         <li *ngFor="let subSection of section.subSections">
-          <a [href]="'/xss/#' + subSection.label">
+          <a (click)="scrollToSection(subSection.label)">
             <span>{{subSection.label}}</span>
           </a>
           <ul *ngIf="subSection.subSections">
             <li *ngFor="let subSubSection of subSection.subSections">
-              <a [href]="'/xss#' + subSubSection.label">
+              <a (click)="scrollToSection(subSubSection.label)">
                 <span>{{subSubSection.label}}</span>
               </a>
             </li>
@@ -31,13 +43,7 @@
   </ng-template>
 </p-listbox>
 
-
-
-<div *ngIf="selectedSection">
-  <h2>{{ selectedSection.label }}</h2>
-  <p>Contenido de la sección...</p>
-</div>
-
+<br>
 
 <div class="panel-wrapper">
   <p-panel>
@@ -63,7 +69,7 @@
 </div>
 <hr>
 <div class="panel-wrapper">
-  <p-panel [toggleable]="true">
+  <p-panel [toggleable]="true" id="Reflected XSS">
     <ng-template pTemplate="header">
       <div class="header-container"  >
         <h3>{{ panelHeaderReflected }}</h3>
@@ -79,7 +85,7 @@
 <hr>
 
 <br>
-<div class="panel-wrapper">
+<div class="panel-wrapper" id="Stored XSS">
   <p-panel [toggleable]="true">
     <ng-template pTemplate="header">
       <div class="header-container">
@@ -104,7 +110,7 @@
     </p>
     <hr>
     <div class="panel-wrapper">
-      <p-panel [toggleable]="true" >
+      <p-panel [toggleable]="true" id="Ejemplo1: Alert">
         <ng-template pTemplate="header">
           <div class="header-container">
             <h3>{{ ejemplo1 }}</h3>
@@ -145,7 +151,7 @@
     </div>
     <br>
     <div class="panel-wrapper">
-      <p-panel [toggleable]="true">
+      <p-panel [toggleable]="true" id="Ejemplo2: Robo de cookie">
         <ng-template pTemplate="header">
           <div class="header-container">
             <h3>{{ ejemplo2 }}</h3>

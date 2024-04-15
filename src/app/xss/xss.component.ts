@@ -1,5 +1,6 @@
 import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { Location } from '@angular/common';
 import Prism from 'prismjs';
 import { Router, NavigationEnd } from '@angular/router';
 interface Section {
@@ -14,20 +15,27 @@ interface Section {
 })
 export class XssComponent implements AfterViewInit, OnInit  {
   sections: Section[] = [
-    { 
-      label: 'Código XSS',
-      subSections: [
-        { label: 'Ejemplos' },
-        { label: 'Test', 
-          subSections: [
-            { label: 'Subtest' }
-          ]
-        }
-      ]
-    },
-    { label: 'Reflected XSS' },
-    { label: 'Stored XSS' },
-    { label: 'Test' }
+    { label: 'Que es XSS'},
+    { label: 'Reflected XSS',
+    subSections: [
+      { label: 'Ejemplos' },
+      { label: 'Test', 
+        subSections: [
+          { label: 'Subtest' }
+        ]
+      }
+    ]
+     },
+     { label: 'Stored XSS',
+    subSections: [
+      { label: 'Ejemplo1: Alert' },
+      { label: 'Ejemplo2: Robo de cookie', 
+        //subSections: [
+          //{ label: 'Subtest' }
+        //]
+      }
+    ]
+     }
   ];
   selectedSection: Section | undefined;
   pageTitle: string = '';
@@ -90,7 +98,7 @@ export class XssComponent implements AfterViewInit, OnInit  {
   }`;
   
   
-  constructor(private titleService: Title, private router: Router) {
+  constructor(private titleService: Title, private router: Router, private location: Location) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         window.scrollTo(0, 0); // Scrolls to the top of the page
@@ -106,6 +114,10 @@ export class XssComponent implements AfterViewInit, OnInit  {
   ngAfterViewInit(): void {
     Prism.highlightAll(); // Resalta la sintaxis del código
   }
+  generateURL(label: string): string {
+    const basePath = this.location.prepareExternalUrl('');
+    return `${basePath}xss#${label}`;
+  }
 
   copyContent(param: any) {
     const codeContainer = document.querySelector(param) as HTMLElement;
@@ -117,6 +129,13 @@ export class XssComponent implements AfterViewInit, OnInit  {
       window.getSelection()?.addRange(range);
       document.execCommand('copy'); // Copia el texto seleccionado al portapapeles
       window.getSelection()?.removeAllRanges();
+    }
+  }
+  scrollToSection(label: string): void {
+    console.log(label)
+    const section = document.getElementById(label);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 }
