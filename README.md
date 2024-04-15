@@ -1,27 +1,20 @@
 # CyberSecNotes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.1.
+CyberSecNotes es una página web dedicada a proporcionar apuntes y recursos sobre ciberseguridad, centrándose en el campo del pentesting (pruebas de penetración).
 
-## Development server
+## Acerca de
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+En CyberSecNotes, nuestro objetivo es crear una plataforma donde los profesionales de la ciberseguridad, los estudiantes y los entusiastas puedan acceder a información valiosa y recursos educativos sobre pentesting. Ya sea que estés buscando introducirte en el mundo de la seguridad informática o estés buscando ampliar tus conocimientos existentes, aquí encontrarás una variedad de materiales útiles.
 
-## Code scaffolding
+## Características
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Apuntes detallados:** Exploramos diversos temas de pentesting con apuntes detallados y fáciles de entender.
+- **Artículos y tutoriales:** Publicamos artículos y tutoriales sobre técnicas actuales de pentesting, mejores prácticas y tendencias en ciberseguridad.
 
-## Build
+## Contacto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Si tienes alguna pregunta, sugerencia o simplemente quieres decir hola, no dudes en ponerte en contacto con nosotros.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Correo electrónico: cybersecnotes@example.com
+- Twitter: [@CyberSecNotes](https://twitter.com/CyberSecNotes)
+- Sitio web: [www.cybersecnotes.com](https://www.cybersecnotes.com)
