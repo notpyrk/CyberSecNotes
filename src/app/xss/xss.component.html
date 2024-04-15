@@ -7,6 +7,38 @@
   <h1>Cross Site Scripting</h1>
 </p-header>
 
+<p-listbox [options]="sections" [style]="{'width':'300px'}" [optionLabel]="'label'">
+  <ng-template let-section pTemplate="item">
+    <div>
+      <a [href]="'#' + section.label">
+        <span>{{section.label}}</span>
+      </a>
+      <ul *ngIf="section.subSections">
+        <li *ngFor="let subSection of section.subSections">
+          <a [href]="'#' + subSection.label">
+            <span>{{subSection.label}}</span>
+          </a>
+          <ul *ngIf="subSection.subSections">
+            <li *ngFor="let subSubSection of subSection.subSections">
+              <a [href]="'#' + subSubSection.label">
+                <span>{{subSubSection.label}}</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </ng-template>
+</p-listbox>
+
+
+
+<div *ngIf="selectedSection">
+  <h2>{{ selectedSection.label }}</h2>
+  <p>Contenido de la sección...</p>
+</div>
+
+
 <div class="panel-wrapper">
   <p-panel>
     <ng-template pTemplate="header">
@@ -29,15 +61,11 @@
     </p>  
   </p-panel>
 </div>
-
-<br>
 <hr>
-
-<br>
 <div class="panel-wrapper">
   <p-panel [toggleable]="true">
     <ng-template pTemplate="header">
-      <div class="header-container">
+      <div class="header-container" id="Subtest">
         <h3>{{ panelHeaderReflected }}</h3>
         
       </div>

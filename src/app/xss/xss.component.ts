@@ -2,12 +2,34 @@ import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import Prism from 'prismjs';
 import { Router, NavigationEnd } from '@angular/router';
+interface Section {
+  label: string;
+  subSections?: Section[];
+}
+
 @Component({
   selector: 'app-xss',
   templateUrl: './xss.component.html',
   styleUrls: ['./xss.component.css']
 })
 export class XssComponent implements AfterViewInit, OnInit  {
+  sections: Section[] = [
+    { 
+      label: 'Código XSS',
+      subSections: [
+        { label: 'Ejemplos' },
+        { label: 'Test', 
+          subSections: [
+            { label: 'Subtest' }
+          ]
+        }
+      ]
+    },
+    { label: 'Reflected XSS' },
+    { label: 'Stored XSS' },
+    { label: 'Test' }
+  ];
+  selectedSection: Section | undefined;
   pageTitle: string = '';
   panelHeader: string = 'Codigo XSS';
   codigoXSScookie: string = 'script para obtener la cookie';

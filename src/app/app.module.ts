@@ -21,6 +21,7 @@ import { ButtonModule } from 'primeng/button';
 import { LfiComponent } from './lfi/lfi.component';
 import { NmapComponent } from './nmap/nmap.component';
 import { TableModule  } from 'primeng/table';
+import { ListboxModule } from 'primeng/listbox';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { TableModule  } from 'primeng/table';
     SidebarModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
-    TableModule 
+    TableModule ,
+    ListboxModule
   ],
   providers: [PrimeIcons ],
   bootstrap: [AppComponent]
