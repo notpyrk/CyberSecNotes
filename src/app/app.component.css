@@ -8,7 +8,7 @@
 
 .layout-sidebar {
     flex: 0 0 250px; /* Ancho fijo de la barra lateral */
-    background-color: #f0f0f0; /* Color de fondo de la barra lateral */
+    background-color: #E1ECFF; /* Color de fondo de la barra lateral */
     
 }
 
@@ -21,6 +21,14 @@
     border-radius: 10px; /* Ajusta el valor según tus preferencias */
   }
   .layout-sidebar {
-    background-color: #f4f4f4;
+    background-color: #E1ECFF;
 }
   
+:host ::ng-deep .p-panel .p-panel-content { 
+    background: #E1ECFF !important; 
+    
+  } 
+:host ::ng-deep .p-panel .p-panel-header { 
+    background: #ACB1BA !important; 
+    color: white;
+}
