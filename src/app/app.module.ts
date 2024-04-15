@@ -22,6 +22,7 @@ import { LfiComponent } from './lfi/lfi.component';
 import { NmapComponent } from './nmap/nmap.component';
 import { TableModule  } from 'primeng/table';
 import { ListboxModule } from 'primeng/listbox';
+import { HomeComponent } from './home/home.component'
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ListboxModule } from 'primeng/listbox';
     XssComponent,
     SqlInjectionPageComponent,
     LfiComponent,
-    NmapComponent
+    NmapComponent,
+    HomeComponent
   ],
   imports: [
     ButtonModule,

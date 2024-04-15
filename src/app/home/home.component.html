@@ -1,58 +1,82 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Apuntes de Ciberseguridad</title>
-    <!-- Aquí puedes incluir enlaces a tus hojas de estilo CSS y scripts JS -->
-</head>
-<body>
-    <header>
-        <h1>Explora el mundo de la ciberseguridad</h1>
-        <!-- Puedes añadir un logo u otros elementos visuales aquí -->
-    </header>
+<style>
+    p {
+        font-size: 18px;
+    }
+    .llamativo {
+        color: #595C60; /* Cambia el color del texto a rojo */
+        font-size: 48px; /* Cambia el tamaño de la fuente */
+        font-weight: bold; /* Hace que el texto sea más audaz */
+        /* Puedes agregar más estilos según tus preferencias */
+    }
+    .divTitle {
+        border: 2px solid #73AD21;
+        padding: 10px; /* Puedes ajustar el relleno según tus preferencias */
+        display: inline-block;
+        border-radius: 30px;
+    }
+    .container {
+        text-align: center; /* Centra el contenido horizontalmente */
+    }
+</style>
 
-    <main>
-        <section>
-            <h2>Categorías de apuntes</h2>
-            <ul>
-                <li><a href="#">Criptografía</a></li>
-                <li><a href="#">Hacking ético</a></li>
-                <li><a href="#">Seguridad de redes</a></li>
-                <!-- Añade más categorías según sea necesario -->
-            </ul>
-        </section>
+<div class="container">
+    <div class="divTitle">
+        <h1 class="llamativo">CyberSecNotes</h1>
+    </div>
+</div>
 
-        <section>
-            <h2>Apuntes destacados</h2>
-            <!-- Aquí puedes mostrar algunos apuntes destacados o los más recientes -->
-            <div>
-                <h3>Título del apunte destacado</h3>
-                <p>Descripción breve del apunte destacado.</p>
-                <a href="#">Ver más</a>
-            </div>
-            <!-- Repite este bloque para cada apunte destacado -->
-        </section>
+<hr>
+<br>
+<div class="panel-wrapper">
+    <p-panel  [toggleable]="true">
+      <p>
+        LFI (Local File Inclusion) es una vulnerabilidad de seguridad que ocurre cuando una aplicación web permite a un atacante incluir archivos locales del servidor en el contenido de una página web. 
+        Esto puede permitir al atacante leer archivos sensibles del servidor que normalmente no estarían accesibles a través de la interfaz web. 
+      </p>  
+      <p>
+        La vulnerabilidad de LFI generalmente ocurre cuando una aplicación web utiliza la entrada del usuario para incluir archivos locales sin la debida validación o filtrado. 
+        Esto puede suceder en varios contextos, como la inclusión de archivos de plantillas, la carga de archivos de configuración o la inclusión de archivos de registro.
+      </p>  
+      <p>
+        Un ataque de LFI puede ser especialmente peligroso si el servidor web ejecuta el software con privilegios elevados o si los archivos sensibles, como contraseñas o información confidencial, 
+        están accesibles a través de la inclusión local de archivos.
+      </p>  
+      <p>
+        LFI (Local File Inclusion) es una vulnerabilidad de seguridad que ocurre cuando una aplicación web permite a un atacante incluir archivos locales del servidor en el contenido de una página web. 
+        Esto puede permitir al atacante leer archivos sensibles del servidor que normalmente no estarían accesibles a través de la interfaz web. 
+      </p>  
+      <p>
+        La vulnerabilidad de LFI generalmente ocurre cuando una aplicación web utiliza la entrada del usuario para incluir archivos locales sin la debida validación o filtrado. 
+        Esto puede suceder en varios contextos, como la inclusión de archivos de plantillas, la carga de archivos de configuración o la inclusión de archivos de registro.
+      </p>  
+      <p>
+        Un ataque de LFI puede ser especialmente peligroso si el servidor web ejecuta el software con privilegios elevados o si los archivos sensibles, como contraseñas o información confidencial, 
+        están accesibles a través de la inclusión local de archivos.
+      </p>  
+      <p>
+        LFI (Local File Inclusion) es una vulnerabilidad de seguridad que ocurre cuando una aplicación web permite a un atacante incluir archivos locales del servidor en el contenido de una página web. 
+        Esto puede permitir al atacante leer archivos sensibles del servidor que normalmente no estarían accesibles a través de la interfaz web. 
+      </p>  
+      <p>
+        La vulnerabilidad de LFI generalmente ocurre cuando una aplicación web utiliza la entrada del usuario para incluir archivos locales sin la debida validación o filtrado. 
+        Esto puede suceder en varios contextos, como la inclusión de archivos de plantillas, la carga de archivos de configuración o la inclusión de archivos de registro.
+      </p>  
+      <p>
+        Un ataque de LFI puede ser especialmente peligroso si el servidor web ejecuta el software con privilegios elevados o si los archivos sensibles, como contraseñas o información confidencial, 
+        están accesibles a través de la inclusión local de archivos.
+      </p>  
+      <p>
+        LFI (Local File Inclusion) es una vulnerabilidad de seguridad que ocurre cuando una aplicación web permite a un atacante incluir archivos locales del servidor en el contenido de una página web. 
+        Esto puede permitir al atacante leer archivos sensibles del servidor que normalmente no estarían accesibles a través de la interfaz web. 
+      </p>  
+      <p>
+        La vulnerabilidad de LFI generalmente ocurre cuando una aplicación web utiliza la entrada del usuario para incluir archivos locales sin la debida validación o filtrado. 
+        Esto puede suceder en varios contextos, como la inclusión de archivos de plantillas, la carga de archivos de configuración o la inclusión de archivos de registro.
+      </p>  
+      <p>
+        Un ataque de LFI puede ser especialmente peligroso si el servidor web ejecuta el software con privilegios elevados o si los archivos sensibles, como contraseñas o información confidencial, 
+        están accesibles a través de la inclusión local de archivos.
+      </p>  
 
-        <section>
-            <h2>Llamada a la acción</h2>
-            <p>Regístrate para acceder a contenido exclusivo y estar al tanto de las últimas actualizaciones.</p>
-            <a href="#">Registrarse</a>
-        </section>
-
-        <section>
-            <h2>Testimonios</h2>
-            <!-- Aquí puedes mostrar testimonios de usuarios satisfechos -->
-            <div>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tempor ex."</p>
-                <p>- Nombre del usuario</p>
-            </div>
-            <!-- Repite este bloque para cada testimonio -->
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Apuntes de Ciberseguridad</p>
-    </footer>
-</body>
-</html>
+    </p-panel>
+</div>

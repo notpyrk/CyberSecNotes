@@ -16,10 +16,36 @@
     padding-bottom: 1%;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    transition: top 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    opacity: 1;
+  }
+  .visible {
+  top: 0;
+  }
+
+  .hidden {
+    top: -100px;
+    opacity: 0;
+  }
+  .scroll-top-button {
+    position: fixed;
+    margin-right: 0.4%;
+    bottom: 20px;
+    right: 20px;
+    background-color: #8AB4F9;
+    color: #ffffff;
+    border: black 1px solid !important;
+    border-radius: 20%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+ 
   }
 </style>
-
-<header>
+<header [ngClass]="{'visible': isHeaderVisible, 'hidden': !isHeaderVisible}">
   <app-side-menu></app-side-menu>
 </header>
 <body style="background-color: #8AB4F9;">
@@ -29,6 +55,8 @@
     <!-- Contenido principal -->
     <div class="layout-content" style="margin-top: 5%;">
         <router-outlet></router-outlet>
+           <button pButton type="button" icon="pi pi-arrow-up" class="scroll-top-button" (click)="scrollToTop()"></button>
+          <!--<p-button class="scroll-top-button p-button-rounded" (click)="scrollToTop()" icon="pi pi-arrow-up" iconPos="center"></p-button>-->
     </div>
   </div>
 

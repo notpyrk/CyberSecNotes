@@ -10,17 +10,17 @@
 <p-listbox [options]="sections" [style]="{'width':'300px'}" [optionLabel]="'label'">
   <ng-template let-section pTemplate="item">
     <div>
-      <a [href]="'#' + section.label">
+      <a [href]="'/xss/#' + section.label">
         <span>{{section.label}}</span>
       </a>
       <ul *ngIf="section.subSections">
         <li *ngFor="let subSection of section.subSections">
-          <a [href]="'#' + subSection.label">
+          <a [href]="'/xss/#' + subSection.label">
             <span>{{subSection.label}}</span>
           </a>
           <ul *ngIf="subSection.subSections">
             <li *ngFor="let subSubSection of subSection.subSections">
-              <a [href]="'#' + subSubSection.label">
+              <a [href]="'/xss/#' + subSubSection.label">
                 <span>{{subSubSection.label}}</span>
               </a>
             </li>
@@ -43,7 +43,7 @@
   <p-panel>
     <ng-template pTemplate="header">
       <div class="header-container">
-        <span>{{ panelXSSHeader }}</span>
+        <h3>{{ panelXSSHeader }}</h3>
       </div>
     </ng-template>
     <p>
@@ -65,7 +65,7 @@
 <div class="panel-wrapper">
   <p-panel [toggleable]="true">
     <ng-template pTemplate="header">
-      <div class="header-container" id="Subtest" >
+      <div class="header-container"  >
         <h3>{{ panelHeaderReflected }}</h3>
         
       </div>
@@ -99,7 +99,7 @@
       La idea es encontrar algun input de la pagina que alamcene la informacion en BBDD (por ejemplo un Foro) y nos permita ejecutar etiquetas HTML. En caso de que así sea,
       tendriamos que crear un registro insertando este codigo malicioso.
     </p>
-    <p>
+    <p id="Subtest">
       Lo que conseguimos con esto es que cada vez que alguien entre en nuestro post creado en el Foro, se ejecute el script, ya que se intepreta cada vez que alguien entre al estar en BBDD
     </p>
     <hr>
