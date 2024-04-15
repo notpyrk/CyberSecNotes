@@ -26,7 +26,7 @@
         están accesibles a través de la inclusión local de archivos.
       </p>  
     </p-panel>
-</div><br>
+</div><hr>
 <div class="panel-wrapper">
     <p-panel  [toggleable]="true">
         <ng-template pTemplate="header">
@@ -40,7 +40,7 @@
         <p>
             Vamos a crear el siguiente fichero en nuestra maquina, lo vamos a llamar index.php y lo vamos a ejecutar en un servidor PHP de forma local
         </p>  
-        <pre class="php"><strong>{{comando}}</strong><button pButton type="button" icon="pi pi-copy" (click)="copyContent('.php')" class="copy-button"></button><br><hr><code class="language-javascript">{{ php }}</code></pre>
+        <pre class="php"><strong>{{codigo}}</strong><button pButton type="button" icon="pi pi-copy" (click)="copyContent('.php')" class="copy-button"></button><br><hr><code class="language-javascript">{{ php }}</code></pre>
         <p>
             Ademas nos vamos a crear un fichero con el nombre test, y le vamos a añadir cualquier contenido
         </p> 
@@ -55,11 +55,11 @@
             Esta aplicacion que hemos creado, nos pide por url el nombre de un fichero para mostrar su contenido. Se utilizan los includes de PHP
         </p> 
         <p>
-            Una vez tengamos el fichero index.php ejecutandose y un fichero con un contenido cualquiera, probamos a llamar a este fichero
+            Una vez tengamos el fichero index.php ejecutandose y un fichero con un contenido cualquiera, probamos a llamar a este fichero a traves de la URL
         </p> 
         <img src="assets/LFI/php.PNG"><br><br>
         <p>
-            Como vemos, se interpretan las etiquetas html (aunque para nosotros esto no es relevante)
+            Como vemos, se interpretan las etiquetas html (aunque para nosotros esto no es relevante de momento)
         </p> 
         <p>
             El concepto de todo esto, es que se ha incluido el fichero test, y somos capaces de ver el contenido, porque le hemos indicado en la url el fichero a incluir (aunque el fichero tenga que estar en la ruta /var/www/html/... por ahora)

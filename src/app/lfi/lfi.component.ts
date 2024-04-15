@@ -23,7 +23,7 @@ export class LfiComponent {
   ?>
   `;
   phpServer: string = `php -S localhost:8000`;
-  
+  codigo:  string = 'codigo';
   comando:  string = 'comando';
   ngOnInit(): void {
     this.pageTitle = 'Ataques a contraseñas online';
