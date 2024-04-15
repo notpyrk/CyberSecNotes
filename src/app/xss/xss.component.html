@@ -20,7 +20,7 @@
           </a>
           <ul *ngIf="subSection.subSections">
             <li *ngFor="let subSubSection of subSection.subSections">
-              <a [href]="'/xss/#' + subSubSection.label">
+              <a [href]="'/xss#' + subSubSection.label">
                 <span>{{subSubSection.label}}</span>
               </a>
             </li>
